@@ -128,7 +128,7 @@
       <section class="blocco" id="competenze">
         ${intesta("competenze", 2)}
         <div class="competenze">
-          ${S.skills.map(g => `<div class="gruppo appare"><h3>${tr(g.group)}</h3><p>${g.items.map(x => `<span>${esc(x)}</span>`).join("")}</p></div>`).join("")}
+          ${S.skills.map(g => `<div class="gruppo appare"><h3>${tr(g.group)}</h3><p>${g.items.map(x => `<span>${esc(tr(x))}</span>`).join("")}</p></div>`).join("")}
         </div>
       </section>
 
