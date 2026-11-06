@@ -12,7 +12,7 @@
 window.SITE = {
   name: "Matteo Bouhuis",
   email: "matteo.bouhuis@gmail.com",
-  linkedin: "https://www.linkedin.com/in/matteo-bouhuis-684088332",
+  linkedin: "https://www.linkedin.com/in/matteobouhuis",
   github: "https://github.com/matteobouhuis",
   photo: "foto-profilo.jpg",
   cv: { it: "CV_Matteo_Bouhuis_IT.pdf", en: "CV_Matteo_Bouhuis_EN.pdf" },
