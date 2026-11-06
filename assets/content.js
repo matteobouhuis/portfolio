@@ -244,7 +244,7 @@ window.SITE = {
   skills: [
     { group: { it: "Linguaggi", en: "Languages" }, items: ["MATLAB", "Python", { it: "C++ (in apprendimento)", en: "C++ (learning)" }] },
     { group: { it: "CFD", en: "CFD" }, items: ["SU2", "OpenFOAM (simpleFoam, snappyHexMesh)", "RANS: k-ω SST, Spalart–Allmaras", { it: "Convergenza di griglia (GCI)", en: "Grid convergence (GCI)" }, "ParaView"] },
-    { group: { it: "CAD", en: "CAD" }, items: ["SolidWorks", "Solid Edge", "AutoCAD"] },
+    { group: { it: "CAD", en: "CAD" }, items: ["SolidWorks", "Solid Edge", "AutoCAD", "Fusion 360", "Inventor"] },
     { group: { it: "Sperimentale", en: "Experimental" }, items: [{ it: "Prove in galleria del vento", en: "Wind tunnel testing" }, { it: "Estensimetri", en: "Strain gauges" }] }
   ],
 
