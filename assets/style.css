@@ -1,0 +1,229 @@
+:root {
+  --carta: #F6F5F1;
+  --superficie: #FFFFFF;
+  --inchiostro: #15181D;
+  --grafite: #3B424E;
+  --tenue: #6B7280;
+  --linea: #E2E0D8;
+  --linea-forte: #CFCCC1;
+  --accento: #E4572E;
+  --accento-tenue: rgba(228, 87, 46, 0.10);
+  --scuro: #121519;
+  --bordo: clamp(16px, 4vw, 48px);
+  --colonna: 1160px;
+  --titoli: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --testo: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+body {
+  margin: 0; background: var(--carta); color: var(--grafite);
+  font-family: var(--testo); font-size: 16px; line-height: 1.65;
+  -webkit-font-smoothing: antialiased; overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+h1, h2, h3 { font-family: var(--titoli); color: var(--inchiostro); line-height: 1.12; margin: 0; letter-spacing: -0.02em; }
+p { margin: 0; }
+strong { color: var(--inchiostro); font-weight: 600; }
+svg { width: 18px; height: 18px; flex: none; }
+.mono { font-family: var(--mono); }
+
+/* ---------- header ---------- */
+.testa {
+  position: sticky; top: 0; z-index: 20;
+  background: color-mix(in srgb, var(--carta) 90%, transparent);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid transparent; transition: border-color .2s;
+}
+.testa.ombra { border-bottom-color: var(--linea); }
+.testa-int { max-width: var(--colonna); margin: 0 auto; padding: 14px var(--bordo); display: flex; align-items: center; gap: 28px; }
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.marchio {
+  display: grid; place-items: center; width: 34px; height: 34px; border-radius: 4px;
+  background: var(--inchiostro); color: #fff; font: 600 13px var(--mono); letter-spacing: .02em;
+  position: relative;
+}
+.marchio::after { content: ""; position: absolute; right: -3px; bottom: -3px; width: 9px; height: 9px; background: var(--accento); border-radius: 1px; }
+.logo-nome { font: 600 15px var(--titoli); color: var(--inchiostro); }
+.nav { display: flex; gap: 26px; margin-left: auto; }
+.nav a, .menu-voci a { text-decoration: none; color: var(--tenue); font: 500 13px var(--mono); text-transform: uppercase; letter-spacing: .06em; transition: color .15s; }
+.nav a:hover { color: var(--inchiostro); }
+.destra { display: flex; align-items: center; gap: 12px; }
+.lingua { display: flex; align-items: center; gap: 4px; font: 500 13px var(--mono); color: var(--linea-forte); }
+.lingua button { border: 0; background: none; font: inherit; color: var(--tenue); padding: 4px 2px; cursor: pointer; }
+.lingua button.attivo { color: var(--accento); }
+.hamb { display: none; border: 0; background: none; color: var(--inchiostro); padding: 6px; cursor: pointer; }
+.hamb svg { width: 24px; height: 24px; }
+
+.menu { border: 0; padding: 0; margin: 0; width: 100%; max-width: 100%; height: 100%; max-height: 100%; background: var(--carta); }
+.menu::backdrop { background: transparent; }
+.menu .chiudi { display: block; position: absolute; top: 14px; right: var(--bordo); }
+.menu-voci { display: flex; flex-direction: column; gap: 4px; padding: 90px var(--bordo); }
+.menu-voci a { font: 600 30px var(--titoli); text-transform: none; letter-spacing: -0.02em; color: var(--inchiostro); padding: 8px 0; border-bottom: 1px solid var(--linea); }
+
+@media (max-width: 800px) {
+  .nav { display: none; }
+  .destra { margin-left: auto; }
+  .hamb { display: block; }
+}
+
+/* ---------- layout ---------- */
+main { max-width: var(--colonna); margin: 0 auto; padding: 0 var(--bordo); }
+.blocco { padding: 72px 0 8px; }
+.intesta { display: flex; align-items: baseline; gap: 14px; margin-bottom: 28px; }
+.intesta .num { font: 500 13px var(--mono); color: var(--accento); }
+.intesta h2 { font-size: clamp(24px, 3vw, 32px); }
+.intesta::after { content: ""; flex: 1; height: 1px; background: var(--linea); transform: translateY(-6px); }
+
+/* ---------- apertura ---------- */
+.apertura {
+  position: relative; display: grid; grid-template-columns: 1fr auto; gap: 56px; align-items: center;
+  padding: 72px 0 56px;
+}
+.flusso { position: absolute; inset: 0 calc(-1 * var(--bordo)); z-index: -1; pointer-events: none; overflow: hidden; }
+.flusso svg { width: 100%; height: 100%; }
+.flusso path { fill: none; stroke: var(--linea-forte); stroke-width: 1; }
+.flusso path.acc { stroke: var(--accento); opacity: .55; }
+.etichetta { font: 500 12px var(--mono); text-transform: uppercase; letter-spacing: .12em; color: var(--tenue); display: flex; align-items: center; gap: 10px; }
+.etichetta::before { content: ""; width: 28px; height: 2px; background: var(--accento); }
+.apertura h1 { font-size: clamp(42px, 8vw, 84px); margin: 18px 0 20px; letter-spacing: -0.035em; }
+.ruolo { font-size: clamp(17px, 1.7vw, 20px); color: var(--inchiostro); font-weight: 500; max-width: 32em; }
+.intro { color: var(--tenue); margin-top: 12px; max-width: 38em; }
+.azioni { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px; padding: 11px 18px; border-radius: 4px;
+  border: 1px solid var(--linea-forte); background: transparent; color: var(--inchiostro);
+  text-decoration: none; font: 500 13px var(--mono); letter-spacing: .02em;
+  transition: background .15s, border-color .15s, color .15s;
+}
+.btn:hover { border-color: var(--inchiostro); }
+.btn.primario { background: var(--inchiostro); border-color: var(--inchiostro); color: #fff; }
+.btn.primario:hover { background: var(--accento); border-color: var(--accento); }
+.ritratto { position: relative; width: clamp(170px, 22vw, 270px); }
+.ritratto::before { content: ""; position: absolute; inset: 14px -14px -14px 14px; border: 2px solid var(--accento); border-radius: 4px; }
+.ritratto img { position: relative; width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 4px; filter: saturate(.9); }
+.ritratto .didascalia { position: absolute; left: 0; bottom: -34px; font: 400 11px var(--mono); color: var(--tenue); letter-spacing: .04em; }
+@media (max-width: 800px) {
+  .apertura { grid-template-columns: 1fr; gap: 32px; padding-top: 36px; }
+  .ritratto { order: -1; width: 150px; }
+  .ritratto .didascalia { display: none; }
+}
+
+/* ---------- numeri chiave ---------- */
+.numeri { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); border-top: 1px solid var(--linea); border-bottom: 1px solid var(--linea); }
+.numero { padding: 20px 20px 20px 0; }
+.numero + .numero { padding-left: 20px; border-left: 1px solid var(--linea); }
+.numero b { display: block; font: 600 28px var(--titoli); color: var(--inchiostro); letter-spacing: -0.02em; }
+.numero span { font: 400 12px var(--mono); color: var(--tenue); text-transform: uppercase; letter-spacing: .06em; }
+@media (max-width: 600px) {
+  .numero + .numero { border-left: 0; padding-left: 0; border-top: 1px solid var(--linea); }
+}
+
+/* ---------- spotlight ---------- */
+.programma {
+  position: relative; overflow: hidden; margin-top: 56px; border-radius: 6px;
+  background: var(--scuro); color: #C9CED6; padding: clamp(26px, 4.5vw, 52px);
+  background-image:
+    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+.programma::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--accento); }
+.programma .kicker { font: 500 12px var(--mono); text-transform: uppercase; letter-spacing: .12em; color: var(--accento); }
+.programma h2 { color: #fff; font-size: clamp(22px, 3vw, 34px); margin: 12px 0 16px; max-width: 24em; }
+.programma p { max-width: 56em; }
+.programma .etichette li { background: transparent; border-color: rgba(255,255,255,.2); color: #E6E9EE; }
+.programma .btn { margin-top: 26px; color: #fff; border-color: rgba(255,255,255,.35); }
+.programma .btn:hover { background: #fff; color: var(--scuro); }
+
+/* ---------- chips ---------- */
+.etichette { list-style: none; padding: 0; margin: 16px 0 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.etichette li { font: 400 11.5px var(--mono); padding: 3px 8px; border-radius: 3px; border: 1px solid var(--linea); color: var(--grafite); background: var(--carta); }
+
+/* ---------- progetti ---------- */
+.progetti { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 22px; }
+.scheda {
+  position: relative; display: flex; flex-direction: column; text-decoration: none;
+  background: var(--superficie); border: 1px solid var(--linea); border-radius: 6px; overflow: hidden;
+  transition: border-color .2s, transform .2s;
+}
+.scheda:hover { border-color: var(--inchiostro); transform: translateY(-2px); }
+.copertina { position: relative; aspect-ratio: 16/10; background: #EEECE6; overflow: hidden; border-bottom: 1px solid var(--linea); }
+.copertina img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
+.scheda:hover .copertina img { transform: scale(1.03); }
+.metrica {
+  position: absolute; left: 12px; top: 12px; z-index: 1; font: 500 12px var(--mono);
+  background: var(--inchiostro); color: #fff; padding: 4px 9px; border-radius: 3px;
+}
+.metrica::before { content: ""; display: inline-block; width: 6px; height: 6px; background: var(--accento); margin-right: 7px; vertical-align: 1px; }
+.segnaposto {
+  width: 100%; height: 100%; display: grid; place-items: center; color: var(--tenue);
+  font: 500 11px var(--mono); letter-spacing: .1em; text-transform: uppercase;
+  background-image:
+    linear-gradient(var(--linea) 1px, transparent 1px),
+    linear-gradient(90deg, var(--linea) 1px, transparent 1px);
+  background-size: 22px 22px; background-color: #F1EFE9;
+}
+.scheda-corpo { padding: 20px 22px 22px; display: flex; flex-direction: column; flex: 1; }
+.riga-meta { display: flex; justify-content: space-between; gap: 10px; align-items: center; margin-bottom: 10px; }
+.indice { font: 500 12px var(--mono); color: var(--tenue); }
+.stato { font: 500 11px var(--mono); text-transform: uppercase; letter-spacing: .06em; color: var(--accento); border: 1px solid var(--accento); padding: 2px 7px; border-radius: 3px; }
+.scheda h3 { font-size: 20px; }
+.contesto { color: var(--tenue); font-size: 14px; margin-top: 4px; }
+.sintesi { margin-top: 10px; font-size: 15px; }
+.scheda .etichette { margin-top: auto; padding-top: 16px; }
+
+/* ---------- competenze ---------- */
+.competenze { border-top: 1px solid var(--linea); }
+.gruppo { display: grid; grid-template-columns: 220px 1fr; gap: 24px; padding: 16px 0; border-bottom: 1px solid var(--linea); }
+.gruppo h3 { font: 500 12px var(--mono); text-transform: uppercase; letter-spacing: .08em; color: var(--tenue); padding-top: 3px; }
+.gruppo p { color: var(--inchiostro); }
+.gruppo p span + span::before { content: "·"; color: var(--accento); margin: 0 10px; }
+@media (max-width: 600px) { .gruppo { grid-template-columns: 1fr; gap: 4px; } }
+
+/* ---------- formazione ---------- */
+.elenco { position: relative; padding-left: 28px; }
+.elenco::before { content: ""; position: absolute; left: 5px; top: 8px; bottom: 8px; width: 1px; background: var(--linea-forte); }
+.voce { position: relative; padding: 4px 0 28px; }
+.voce::before { content: ""; position: absolute; left: -28px; top: 9px; width: 11px; height: 11px; background: var(--carta); border: 2px solid var(--accento); border-radius: 2px; }
+.quando { font: 500 12px var(--mono); color: var(--accento); text-transform: uppercase; letter-spacing: .06em; }
+.voce h3 { font-size: 19px; margin: 4px 0 2px; }
+.voce .contesto { margin-top: 6px; }
+
+/* ---------- chi sono / contatti ---------- */
+.chi p { max-width: 44em; font-size: 18px; color: var(--inchiostro); line-height: 1.6; }
+.contatti { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 0; border-top: 1px solid var(--linea); }
+.contatto { display: block; padding: 18px 0; text-decoration: none; border-bottom: 1px solid var(--linea); }
+.contatto span { display: block; font: 500 11px var(--mono); color: var(--tenue); text-transform: uppercase; letter-spacing: .08em; }
+.contatto b { font: 600 17px var(--titoli); color: var(--inchiostro); word-break: break-word; transition: color .15s; }
+.contatto:hover b { color: var(--accento); }
+
+.piede { max-width: var(--colonna); margin: 80px auto 0; padding: 24px var(--bordo) 40px; color: var(--tenue); font: 400 12px var(--mono); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; border-top: 1px solid var(--linea); }
+
+/* ---------- pagina progetto ---------- */
+.dettaglio { padding: 44px 0 0; max-width: 840px; }
+.indietro { display: inline-flex; align-items: center; gap: 6px; color: var(--tenue); text-decoration: none; font: 500 12px var(--mono); text-transform: uppercase; letter-spacing: .06em; }
+.indietro:hover { color: var(--accento); }
+.dettaglio h1 { font-size: clamp(30px, 5vw, 50px); margin: 18px 0 8px; }
+.dettaglio .contesto { font-size: 15px; }
+.dettaglio .sintesi { font-size: 18px; color: var(--inchiostro); margin-top: 18px; }
+.dettaglio .copertina { border-radius: 6px; margin-top: 28px; border: 1px solid var(--linea); }
+.sezione { margin-top: 34px; display: grid; grid-template-columns: 150px 1fr; gap: 24px; }
+.sezione h2 { font: 500 12px var(--mono); text-transform: uppercase; letter-spacing: .08em; color: var(--accento); padding-top: 4px; }
+@media (max-width: 600px) { .sezione { grid-template-columns: 1fr; gap: 6px; } }
+.galleria { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 14px; margin-top: 36px; }
+.galleria figure { margin: 0; }
+.galleria img { border-radius: 4px; border: 1px solid var(--linea); width: 100%; background: #fff; }
+.galleria figcaption { font: 400 12px var(--mono); color: var(--tenue); margin-top: 8px; }
+
+/* ---------- comparsa ---------- */
+.appare { opacity: 0; transform: translateY(12px); transition: opacity .6s ease, transform .6s ease; }
+.appare.visto { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .appare { opacity: 1; transform: none; transition: none; }
+  .scheda, .btn, .copertina img { transition: none; }
+}

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Matteo Bouhuis | Aeronautical Engineering</title>
+  <meta name="description" content="Matteo Bouhuis, MSc student in Aeronautical Engineering at Politecnico di Milano. CFD, aeroelasticity, multiphase solvers in SU2.">
+  <meta property="og:title" content="Matteo Bouhuis | Aeronautical Engineering">
+  <meta property="og:description" content="CFD, aeroelasticity and motorsport aerodynamics. Projects and CV.">
+  <meta property="og:image" content="img/foto-profilo.jpg">
+  <meta name="theme-color" content="#F6F5F1">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="testa" id="testa">
+    <div class="testa-int">
+      <a class="logo" href="#/" id="logo"><span class="marchio">MB</span><span class="logo-nome">Matteo Bouhuis</span></a>
+      <nav class="nav" id="nav"></nav>
+      <div class="destra">
+        <div class="lingua" id="lingua" role="group" aria-label="Lingua / Language">
+          <button type="button" data-lang="it">IT</button>
+          <span aria-hidden="true">/</span>
+          <button type="button" data-lang="en">EN</button>
+        </div>
+        <button class="hamb" id="apri-menu" type="button" aria-label="Menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8h16M4 16h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <dialog id="menu" class="menu">
+    <button class="hamb chiudi" id="chiudi-menu" type="button" aria-label="Chiudi">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <nav class="menu-voci" id="menu-voci"></nav>
+  </dialog>
+
+  <main id="pagina"></main>
+
+  <footer class="piede" id="piede"></footer>
+
+  <script src="assets/content.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
