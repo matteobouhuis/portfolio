@@ -2,9 +2,9 @@
   ============================================================
   CONTENUTI DEL PORTFOLIO — questo è l'unico file da modificare
   ============================================================
-  - Ogni testo ha due versioni: { it: "...", en: "..." }
+  - Ogni testo ha due versioni: { it: "...", en: "..." } (anche le competenze; una parola uguale nelle due lingue può restare una stringa semplice)
   - I punti marcati con TODO sono da completare/verificare.
-  - Immagini progetto: mettile in  progetti/<id>/  e scrivi il percorso in "cover" e "gallery".
+  - Immagini progetto: tutte nella stessa cartella del sito, chiamate <id-progetto>-<nome>.jpg.
     Se l'immagine non esiste, il sito mostra un riquadro segnaposto (non si rompe nulla).
   - Per aggiungere un progetto: copia un blocco { id: ..., } dentro "projects" e cambia i campi.
 */
@@ -12,10 +12,10 @@
 window.SITE = {
   name: "Matteo Bouhuis",
   email: "matteo.bouhuis@gmail.com",
-  linkedin: "https://www.linkedin.com/in/matteobouhuis",
+  linkedin: "https://www.linkedin.com/in/matteo-bouhuis-684088332",
   github: "https://github.com/matteobouhuis",
-  photo: "img/foto-profilo.jpg",
-  cv: { it: "cv/CV_Matteo_Bouhuis_IT.pdf", en: "cv/CV_Matteo_Bouhuis_EN.pdf" },
+  photo: "foto-profilo.jpg",
+  cv: { it: "CV_Matteo_Bouhuis_IT.pdf", en: "CV_Matteo_Bouhuis_EN.pdf" },
 
   hero: {
     kicker: { it: "CFD · Aeroelasticità · Motorsport", en: "CFD · Aeroelasticity · Motorsport" },
@@ -64,13 +64,13 @@ window.SITE = {
         en: "Extension of SU2's Baer–Nunziato solver from two to N phases, towards a third, inert phase. Presented at the SU2 Conference 2026."
       },
       tags: ["SU2", "C++", "Multiphase", "Baer–Nunziato", "Verification"],
-      cover: "progetti/tesi-baer-nunziato/cover.jpg",
+      cover: "tesi-baer-nunziato-cover.jpg",
       gallery: [
-        { src: "progetti/tesi-baer-nunziato/02-titolo.jpg",
+        { src: "tesi-baer-nunziato-02-titolo.jpg",
           caption: { it: "Slide di apertura del talk alla SU2 Conference 2026", en: "Opening slide of the SU2 Conference 2026 talk" } },
-        { src: "progetti/tesi-baer-nunziato/03-regola-n-fasi.jpg",
+        { src: "tesi-baer-nunziato-03-regola-n-fasi.jpg",
           caption: { it: "La regola dell'estensione: con N = 2 nulla cambia, bit per bit", en: "The extension rule: N = 2 must not change, bit for bit" } },
-        { src: "progetti/tesi-baer-nunziato/04-verifica.jpg",
+        { src: "tesi-baer-nunziato-04-verifica.jpg",
           caption: { it: "Primi test trifase contro la soluzione esatta", en: "First three-phase runs against the exact solution" } }
       ],
       sections: [
@@ -99,13 +99,13 @@ window.SITE = {
         en: "2D RANS in SU2 of an overexpanded convergent-divergent nozzle (NPR 1.25–3.2), validated against Hunter's NASA experiments."
       },
       tags: ["SU2", "RANS", "Spalart–Allmaras", "Shock–boundary layer interaction", "GCI"],
-      cover: "progetti/hunter-nozzle/cover.jpg",
+      cover: "hunter-nozzle-cover.jpg",
       gallery: [
-        { src: "progetti/hunter-nozzle/02-schlieren-npr24.jpg",
+        { src: "hunter-nozzle-02-schlieren-npr24.jpg",
           caption: { it: "Schlieren numerico (sopra) contro il calcolo di Hunter (sotto), NPR = 2,4", en: "Numerical schlieren (top) vs Hunter's computation (bottom), NPR = 2.4" } },
-        { src: "progetti/hunter-nozzle/03-thrust-ratio.jpg",
+        { src: "hunter-nozzle-03-thrust-ratio.jpg",
           caption: { it: "Rapporto di spinta F/Fi: teoria 1D, esperimento, CFD di Hunter e SU2", en: "Thrust ratio F/Fi: 1D theory, experiment, Hunter's CFD and SU2" } },
-        { src: "progetti/hunter-nozzle/04-pressione-asse.jpg",
+        { src: "hunter-nozzle-04-pressione-asse.jpg",
           caption: { it: "Pressione statica normalizzata lungo l'asse al variare di NPR", en: "Normalised centreline static pressure for each NPR" } }
       ],
       sections: [
@@ -119,7 +119,7 @@ window.SITE = {
           p: { it: "Il calcolo cattura la formazione del lambda-shock da NPR ≈ 1,6 e la separazione completa ad alto NPR, con buon accordo con l'esperimento da NPR = 2,0. La separazione mantiene il rapporto di spinta sopra 0,9 anche a NPR = 1,25, dove la teoria quasi-1D prevede un crollo. Limiti: a basso NPR il modello 2D non cattura gli effetti 3D e anticipa la separazione, sovrastimando la spinta.",
                en: "The computation captures lambda-shock formation from NPR ≈ 1.6 and fully detached separation at higher NPR, agreeing well with experiment from NPR = 2.0. Separation keeps the thrust ratio above 0.9 even at NPR = 1.25, where quasi-1D theory predicts a collapse. Limitations: at low NPR the 2D model misses 3D effects and predicts earlier separation, overestimating thrust." } }
       ],
-      links: []   // es. report PDF: { href: "progetti/hunter-nozzle/report.pdf", label: { it: "Report completo", en: "Full report" } }
+      links: []   // es. report PDF: { href: "hunter-nozzle-report.pdf", label: { it: "Report completo", en: "Full report" } }
     },
     {
       id: "treni-alta-velocita",
@@ -131,15 +131,15 @@ window.SITE = {
         en: "OpenFOAM parametric study of nose shape in headwind and roof shape in crosswind: drag, wake vortices and overturning stability."
       },
       tags: ["OpenFOAM", "simpleFoam", "k-ω SST", "snappyHexMesh", "SolidWorks", "EN 14067"],
-      cover: "progetti/treni-alta-velocita/cover.jpg",
+      cover: "treni-alta-velocita-cover.jpg",
       gallery: [
-        { src: "progetti/treni-alta-velocita/02-cd-beta.jpg",
+        { src: "treni-alta-velocita-02-cd-beta.jpg",
           caption: { it: "Coefficiente di resistenza al variare dell'angolo del naso β", en: "Drag coefficient vs nose angle β" } },
-        { src: "progetti/treni-alta-velocita/03-cp-naso.jpg",
+        { src: "treni-alta-velocita-03-cp-naso.jpg",
           caption: { it: "Cp sulla testa del treno per β = 15°, 30°, 45°", en: "Cp on the leading car for β = 15°, 30°, 45°" } },
-        { src: "progetti/treni-alta-velocita/04-scia.jpg",
+        { src: "treni-alta-velocita-04-scia.jpg",
           caption: { it: "Vortici di coda, β = 15° e 45°", en: "Tail vortices, β = 15° and 45°" } },
-        { src: "progetti/treni-alta-velocita/05-sezioni-crosswind.jpg",
+        { src: "treni-alta-velocita-05-sezioni-crosswind.jpg",
           caption: { it: "Campo di velocità in quattro sezioni con vento laterale, tre forme del tetto", en: "Velocity field at four sections in crosswind, three roof shapes" } }
       ],
       sections: [
@@ -165,7 +165,7 @@ window.SITE = {
         en: "Racing line and speed profile from a global planner, tracked by an MPC controller on a vehicle with F1-like parameters."
       },
       tags: ["MATLAB", "Simulink", "MPC", "Vehicle Dynamics Blockset", "Optimization"],
-      cover: "progetti/trajectory-tracking-monza/cover.jpg",
+      cover: "trajectory-tracking-monza-cover.jpg",
       gallery: [],
       sections: [
         { h: { it: "Obiettivo", en: "Goal" },
@@ -190,7 +190,7 @@ window.SITE = {
         en: "OpenFOAM comparison of the flat 2021-regulation floor with a Venturi-tunnel floor (Mk2). Simulations run, results analysis in progress."
       },
       tags: ["OpenFOAM", "Ground effect", "External aerodynamics"],
-      cover: "progetti/f1-floor/cover.jpg",
+      cover: "f1-floor-cover.jpg",
       gallery: [],
       sections: [
         { h: { it: "Geometrie", en: "Geometries" },
@@ -213,13 +213,13 @@ window.SITE = {
         en: "Three rear-spoiler variants compared in OpenFOAM in headwind and 45° crosswind: same drag in a straight line, clear differences in crosswind stability."
       },
       tags: ["OpenFOAM v2412", "simpleFoam", "RANS", "ParaView", "Crosswind"],
-      cover: "progetti/helmet-cfd/cover.jpg",
+      cover: "helmet-cfd-cover.jpg",
       gallery: [
-        { src: "progetti/helmet-cfd/02-headwind-tipo1.jpg",
+        { src: "helmet-cfd-02-headwind-tipo1.jpg",
           caption: { it: "Streamline con vento frontale, variante 1", en: "Headwind streamlines, variant 1" } },
-        { src: "progetti/helmet-cfd/03-crosswind-tipo3.jpg",
+        { src: "helmet-cfd-03-crosswind-tipo3.jpg",
           caption: { it: "Streamline con vento laterale a 45°, variante 3", en: "45° crosswind streamlines, variant 3" } },
-        { src: "progetti/helmet-cfd/04-headwind-top.jpg",
+        { src: "helmet-cfd-04-headwind-top.jpg",
           caption: { it: "Vista dall'alto con vento frontale, variante 2", en: "Top view in headwind, variant 2" } }
       ],
       sections: [
@@ -245,13 +245,13 @@ window.SITE = {
         en: "Ritz–Galerkin models in MATLAB of a strut-braced wing: divergence, aileron effectiveness, flutter, gust and stochastic response, with structural optimisation."
       },
       tags: ["MATLAB", "Ritz–Galerkin", "Flutter", "Divergence", "Gust response", "Lyapunov"],
-      cover: "progetti/strut-braced-wing/cover.jpg",
+      cover: "strut-braced-wing-cover.jpg",
       gallery: [
-        { src: "progetti/strut-braced-wing/02-flessione.jpg",
+        { src: "strut-braced-wing-02-flessione.jpg",
           caption: { it: "Spostamento flessionale con e senza montante", en: "Bending displacement with and without the strut" } },
-        { src: "progetti/strut-braced-wing/03-bode.jpg",
+        { src: "strut-braced-wing-03-bode.jpg",
           caption: { it: "Risposta in frequenza alettone–spostamento a 25 m/s", en: "Aileron-to-displacement frequency response at 25 m/s" } },
-        { src: "progetti/strut-braced-wing/04-raffica.jpg",
+        { src: "strut-braced-wing-04-raffica.jpg",
           caption: { it: "Momento flettente alla radice dopo una raffica a gradino", en: "Root bending moment after a step gust" } }
       ],
       sections: [
@@ -267,11 +267,11 @@ window.SITE = {
   ],
 
   skills: [
-    { group: { it: "Linguaggi", en: "Languages" }, items: ["MATLAB", "Python", "C++ (in apprendimento / learning)"] },
-    { group: { it: "CFD", en: "CFD" }, items: ["SU2", "OpenFOAM (simpleFoam, snappyHexMesh)", "RANS: k-ω SST, Spalart–Allmaras", "Grid convergence / GCI", "ParaView"] },
+    { group: { it: "Linguaggi", en: "Languages" }, items: ["MATLAB", "Python", { it: "C++ (in apprendimento)", en: "C++ (learning)" }] },
+    { group: { it: "CFD", en: "CFD" }, items: ["SU2", "OpenFOAM (simpleFoam, snappyHexMesh)", "RANS: k-ω SST, Spalart–Allmaras", { it: "Convergenza di griglia (GCI)", en: "Grid convergence (GCI)" }, "ParaView"] },
     { group: { it: "CAD", en: "CAD" }, items: ["SolidWorks", "Solid Edge", "AutoCAD"] },
     { group: { it: "Simulazione e controllo", en: "Simulation & control" }, items: ["Simulink", "MPC", "Vehicle Dynamics Blockset"] },
-    { group: { it: "Sperimentale", en: "Experimental" }, items: ["Galleria del vento / Wind tunnel testing", "Strain gauges"] }
+    { group: { it: "Sperimentale", en: "Experimental" }, items: [{ it: "Prove in galleria del vento", en: "Wind tunnel testing" }, { it: "Estensimetri", en: "Strain gauges" }] }
   ],
 
   education: [
