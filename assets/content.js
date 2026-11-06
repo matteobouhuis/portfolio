@@ -156,31 +156,6 @@ window.SITE = {
       links: []
     },
     {
-      id: "trajectory-tracking-monza",
-      metric: { it: "Giro 83,5 s · e_y < 0,6 m", en: "83.5 s lap · e_y < 0.6 m" },
-      title: { it: "Trajectory tracking MPC a Monza", en: "MPC trajectory tracking at Monza" },
-      context: { it: "Automation and Control in Autonomous Vehicles, progetto individuale", en: "Automation and Control in Autonomous Vehicles, individual project" },
-      summary: {
-        it: "Racing line e profilo di velocità generati con un global planner, poi inseguiti da un controllore MPC su un veicolo con parametri simili a una F1.",
-        en: "Racing line and speed profile from a global planner, tracked by an MPC controller on a vehicle with F1-like parameters."
-      },
-      tags: ["MATLAB", "Simulink", "MPC", "Vehicle Dynamics Blockset", "Optimization"],
-      cover: "progetti/trajectory-tracking-monza/cover.jpg",
-      gallery: [],
-      sections: [
-        { h: { it: "Obiettivo", en: "Goal" },
-          p: { it: "Seguire posizione e velocità lungo una racing line calcolando sterzo, coppia frenante e coppia di trazione.",
-               en: "Track position and speed along a racing line by computing steering angle, braking torque and drive torque." } },
-        { h: { it: "Metodo", en: "Method" },
-          p: { it: "Geometria di Monza dal database racetrack TUM; global planning con path optimizer e passaggi forward/backward per il profilo di velocità; MPC in Simulink (Ts = 0,02 s, orizzonte di predizione 25, di controllo 3) con modello veicolo a 3 gradi di libertà.",
-               en: "Monza geometry from the TUM racetrack database; global planning with a path optimizer and forward/backward passes for the speed profile; MPC in Simulink (Ts = 0.02 s, prediction horizon 25, control horizon 3) with a 3-DOF vehicle model." } },
-        { h: { it: "Risultati", en: "Results" },
-          p: { it: "Giro in 83,5 s, errore laterale massimo 0,57 m, RMSE di velocità 1,63 m/s. Limite noto: senza saturazione del pneumatico l'accelerazione laterale supera il limite usato nel planner.",
-               en: "83.5 s lap, 0.57 m maximum lateral error, 1.63 m/s velocity RMSE. Known limitation: without tyre saturation, lateral acceleration exceeds the planner limit." } }
-      ],
-      links: []
-    },
-    {
       id: "f1-floor",
       status: { it: "In corso", en: "Ongoing" },
       title: { it: "Fondo F1: piatto contro effetto suolo", en: "F1 floor: flat vs ground effect" },
@@ -270,7 +245,6 @@ window.SITE = {
     { group: { it: "Linguaggi", en: "Languages" }, items: ["MATLAB", "Python", { it: "C++ (in apprendimento)", en: "C++ (learning)" }] },
     { group: { it: "CFD", en: "CFD" }, items: ["SU2", "OpenFOAM (simpleFoam, snappyHexMesh)", "RANS: k-ω SST, Spalart–Allmaras", { it: "Convergenza di griglia (GCI)", en: "Grid convergence (GCI)" }, "ParaView"] },
     { group: { it: "CAD", en: "CAD" }, items: ["SolidWorks", "Solid Edge", "AutoCAD"] },
-    { group: { it: "Simulazione e controllo", en: "Simulation & control" }, items: ["Simulink", "MPC", "Vehicle Dynamics Blockset"] },
     { group: { it: "Sperimentale", en: "Experimental" }, items: [{ it: "Prove in galleria del vento", en: "Wind tunnel testing" }, { it: "Estensimetri", en: "Strain gauges" }] }
   ],
 
